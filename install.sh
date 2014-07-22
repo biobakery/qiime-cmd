@@ -15,7 +15,7 @@ git clone "${dep_url}" "${install_dir}/qiime_deploy/"
 # try to run the qiime-deploy script a few times; it generally
 # installs everything after three tries. (arbitrary; feel free to improve)
 for i in $(seq 3); do 
-    python "${install_dir}/qiime-deploy/qiime-deploy.py" \
+    python "${install_dir}/qiime_deploy/qiime-deploy.py" \
 	-f "${install_dir}/depconf/qiime-1.8.0/qiime.conf" \
 	"${install_dir}/qiime" \
 	>> "${install_dir}/install_log.txt" \
@@ -24,7 +24,7 @@ done
 
 # qiime-deploy likes to insert a 'source /foo/baz/activate.sh' into
 # the user's .bashrc file. Take that madness out.
-sed -i.bac -e '/^source.*'"${install_dir}"'/d' ~/.bashrc
+sed -i.bac -e '/^source .*activate.sh/ d' ~/.bashrc
 
 # Prime the wrapper script with the virtualenv that qiime-deploy so
 # kindly made for use

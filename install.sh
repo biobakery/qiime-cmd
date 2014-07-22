@@ -15,6 +15,7 @@ git clone "${dep_url}" "${install_dir}/qiime_deploy/"
 # try to run the qiime-deploy script a few times; it generally
 # installs everything after three tries. (arbitrary; feel free to improve)
 for i in $(seq 3); do 
+    echo "running install step $i..."
     python "${install_dir}/qiime_deploy/qiime-deploy.py" \
 	-f "${install_dir}/depconf/qiime-1.8.0/qiime.conf" \
 	"${install_dir}/qiime" \
@@ -28,5 +29,5 @@ sed -i.bac -e '/^source .*activate.sh/ d' ~/.bashrc
 
 # Prime the wrapper script with the virtualenv that qiime-deploy so
 # kindly made for use
-sed -i -e 's|LOCATION|'"${install_dir}"'/qiime/activate.sh|' "${here}/qiime_cmd"
+sed -e 's|LOCATION|'"${install_dir}"'/qiime/activate.sh|' "${here}/qiime_cmd" > /usr/bin/qiime_cmd
 

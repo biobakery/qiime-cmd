@@ -28,11 +28,10 @@ done
 sed -i.bac -e '/^source .*activate.sh/ d' ~/.bashrc
 
 # Prime the wrapper script with the virtualenv that qiime-deploy so
-# kindly made for use
-sed -e 's|LOCATION|'"${install_dir}"'/qiime/activate.sh|' \
-    "${here}/qiime_cmd" \
-    > /usr/bin/qiime_cmd
+# kindly made for us
+sed -i -e 's|LOCATION|'"${install_dir}"'/qiime/activate.sh|' \
+    "${here}/qiime_cmd"
 
-chmod 755 /usr/bin/qiime_cmd
+chmod 755 "${here}/qiime_cmd"
 
 

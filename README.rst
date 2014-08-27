@@ -22,3 +22,11 @@ qiime-deploy_::
 Installation should be done via the apt-get command::
   
   # apt-get install -y qiime-cmd
+
+You may need to install the Huttenhower lab repository::
+
+  $ echo "deb http://huttenhower.sph.harvard.edu/biobakery-shop/deb-packages /" \
+	| sudo bash -c "cat - >> /etc/apt/sources.list "
+ 
+  $ wget -O- -q "http://huttenhower.sph.harvard.edu/biobakery-shop/deb-packages/biobakery.asc" \
+	| sudo apt-key add -

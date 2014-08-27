@@ -19,10 +19,6 @@ qiime-deploy_::
 
   # sed -i.bac -e '/multiverse/ s|#[ \t]*\(.*\)|\1|' /etc/apt/sources.list
 
-Installation should be done via the biobakery_pkg command_::
+Installation should be done via the apt-get command::
   
-  # biobakery_pkg install qiime_cmd
-
-
-.. _command: https://bitbucket.org/biobakery/biobakery/src/a1859c354bc9a190dc25f8d21a9f0443d86dc6dc/repository/biobakery_pkg?at=default
-
+  # apt-get install -y qiime-cmd

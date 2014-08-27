@@ -11,6 +11,14 @@ sites for documentation.
 .. _qiime-deploy-conf: https://github.com/qiime/qiime-deploy-conf
 
 
+Usage
+#####
+Just prefix any qiime script with qiime-cmd::
+
+  $ qiime_cmd pick_closed_reference_otus.py -i ...
+
+
+
 Install
 #######
 For Ubuntu only. Note: enable universe and multiverse packages with
